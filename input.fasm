@@ -1,0 +1,107 @@
+nl:
+    add r0,rz,10
+    svc r0,rz,105
+    add pc,lr,rz,0,0
+
+sp:
+    add r0,rz,32
+    svc r0,rz,105
+    add pc,lr,rz,0,0
+
+printr:
+    st  r0, sp, 8
+    st  lr, sp, 8
+    svc r0,rz,102
+    bl  sp
+    svc r1,rz,102
+    bl  sp
+    svc r2,rz,102
+    bl  sp
+    svc r3,rz,102
+    bl  sp
+    svc r4,rz,102
+    bl  sp
+    svc r5,rz,102
+    bl  sp
+    svc r6,rz,102
+    bl  sp
+    svc r7,rz,102
+    bl  sp
+    bl  nl
+    svc r8,rz,102
+    bl  sp
+    svc r9,rz,102
+    bl  sp
+    svc r10,rz,102
+    bl  sp
+    svc r11,rz,102
+    bl  sp
+    svc r12,rz,102
+    bl  sp
+    svc r13,rz,102
+    bl  sp
+    svc r14,rz,102
+    bl  sp
+    svc r15,rz,102
+    bl  sp
+    bl  nl
+    svc r16,rz,102
+    bl  sp
+    svc r17,rz,102
+    bl  sp
+    svc r18,rz,102
+    bl  sp
+    svc r19,rz,102
+    bl  sp
+    svc r20,rz,102
+    bl  sp
+    svc r21,rz,102
+    bl  sp
+    svc r22,rz,102
+    bl  sp
+    svc r23,rz,102
+    bl  sp
+    bl  nl
+    svc r24,rz,102
+    bl  sp
+    svc r25,rz,102
+    bl  sp
+    svc r26,rz,102
+    bl  sp
+    svc r27,rz,102
+    bl  sp
+    svc r28,rz,102
+    bl  sp
+    svc r29,rz,102
+    bl  sp
+    svc r30,rz,102
+    bl  sp
+    svc r31,rz,102
+    bl  sp
+    bl  nl
+    ld  lr, sp, 8
+    ld  r0, sp, 8
+    add pc,lr,rz, 0, 0
+
+exit:
+    svc r0,rz,0
+
+printd:
+    svc r0,rz,103
+    add pc,lr,rz,0,0
+
+start:
+    add r1,rz,1
+    add r2,r1,rz,0,1
+    add r3,r2,rz,0,1
+    add r2,r3,rz,0,1
+    add r5,r2,rz,0,1
+    add r6,r5,rz,0,1
+    add r6,r6,r1,0,0
+    sub r8,r7,r1,0,0
+    mul r9,r8,r1,1,0
+    mul r10,r8,r1,2,0
+    mul r11,r8,r1,2,1
+    bl  printr
+    bl  exit
+    end start
